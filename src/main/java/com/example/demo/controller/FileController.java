@@ -15,7 +15,7 @@ public class FileController {
     
     private final FileService fileService;
 
-    @GetMapping("/readFile") 
+    @GetMapping("/readFile")
     public ResponseEntity<String> readFile() {
         log.debug("[readFile][BEGIN]");
 
