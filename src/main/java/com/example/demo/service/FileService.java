@@ -9,23 +9,40 @@ import java.io.FileReader;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.model.Country;
+import com.example.demo.repository.CountryRepository;
+
 @Service
 @Slf4j
 @RequiredArgsConstructor
 public class FileService {
     
-    @Value("${sales.file.fullPath}")
-    private String salesFilePath;
+    @Value("${file.countries.fullPath}")
+    private String countriesFullPath;
+
+    private final CountryRepository countryRepository;
     
     public void readFile() {
         log.debug("[readFile][BEGIN]");
 
         int count = 0;
-        try (BufferedReader br = new BufferedReader(new FileReader(salesFilePath))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(countriesFullPath))) {
             String line;
             String[] lineArray;
             while ((line = br.readLine()) != null) {
-                lineArray = line.split(",");
+                lineArray = line.split(";");
+
+                Country country = new Country();
+                country.setName(lineArray[1]);
+                country.setCapital(lineArray[3]);
+                country.setContinent(lineArray[8]);
+
+                country.setPopulation(Integer.parseInt(lineArray[4]));
+                country.setArea(Integer.parseInt(lineArray[5]));
+                country.setGdpPerCapita(Integer.parseInt(lineArray[6]));
+                country.setYear(Integer.parseInt(lineArray[7]));
+
+                countryRepository.save(country);
                 
                 count++;
                 log.debug("[readFile][count: {}]", count);
