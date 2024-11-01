@@ -35,12 +35,7 @@ public class FileService {
                 Country country = new Country();
                 country.setName(lineArray[1]);
                 country.setCapital(lineArray[3]);
-                country.setContinent(lineArray[8]);
-
-                country.setPopulation(Integer.parseInt(lineArray[4]));
-                country.setArea(Integer.parseInt(lineArray[5]));
-                country.setGdpPerCapita(Integer.parseInt(lineArray[6]));
-                country.setYear(Integer.parseInt(lineArray[7]));
+                country.setOfficialName(lineArray[2]);
 
                 countryRepository.save(country);
                 

@@ -23,22 +23,10 @@ public class Country {
     @Column(name="name")
     private String name;    
 
+    @Column(name="official_name")
+    private String officialName;
+
     @Column(name="capital")
     private String capital;
-
-    @Column(name="continent")
-    private String continent;
-
-    @Column(name="population")
-    private Integer population;
-
-    @Column(name="area")
-    private Integer area;
-
-    @Column(name="gdp_per_capita")
-    private Integer gdpPerCapita;
-
-    @Column(name="year")
-    private Integer year;
 
 }
