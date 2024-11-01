@@ -5,25 +5,25 @@ READING A FILE AND STORING IT IN AZURE SQL
 
 ----------------------------------------------------
 
-Table created in Azure SQL:
+**Table created in Azure SQL:**
 
-![tblCountry](screenshots/tbl_country.png)
+![tblCountry](screenshots/tblCountry.png)
 
 ----------------------------------------------------
 
-Endpoint exposed to read content from a file:
+**Endpoint exposed to read content from a file:**
 
 ![readFileEndpoint](screenshots/readFileEndpoint.png)
 
 ----------------------------------------------------
 
-Data loaded in the table:
+**Data loaded in the table:**
 
 ![records](screenshots/records.png)
 
 ----------------------------------------------------
 
-Endpoint exposed to clean data from db:
+**Endpoint exposed to clean data from db:**
 
 ![cleanEndpoint](screenshots/cleanEndpoint.png)
 
